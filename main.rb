@@ -6,9 +6,9 @@ require_relative 'update'
 class Main < Sinatra::Base
   get '/' do
     @update = Update.new
-    @update.reaction = 'sad'
-    @update.reason = 'Estelle is sleeping'
+    @update.reaction = 'Reaction'
+    @update.reason = 'Reason'
     @update.url = 'http://www.google.com'
-    haml :'the-markets-have-spoken'
+    haml :main
   end
 end
