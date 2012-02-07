@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + '/the-markets-have-spoken'
+require File.dirname(__FILE__) + '/main'
 
-run TheMarketsHaveSpoken.new
+run Main.new
