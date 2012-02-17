@@ -20,7 +20,7 @@
             %a{ :href => "#{@update.url}" }
               #{@update.reason}
         #graph
-          %img{ :src => "./images/#{@update.reaction}.png", :alt => "The markets are #{@update.reaction}" }
+          %img{ :src => "./images/#{@update.reaction.downcase}.png", :alt => "The markets are #{@update.reaction}" }
         %footer<
           Updated on Monday 6th February 2012. Created by
           %a{ :href => "http://twitter.com/#!/macdermott"}
