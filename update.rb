@@ -3,7 +3,7 @@ class Update
 
     
     def initialize(tweet)
-        @reactions = ['sad', 'happy']    
+        @reactions = ['sad', 'happy', 'calm', 'angry', 'tumultuous']    
         @reaction = tweet.split[0].chomp
         @url = tweet.split[1].chomp
         @reason = tweet.split[2..tweet.split.length].join(" ")
