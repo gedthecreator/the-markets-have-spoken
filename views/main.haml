@@ -6,11 +6,11 @@
     %meta{'description' => 'Find out how the markets have reacted to current events.'}/
     %meta{'author' => '@macdermott'}
     %link{'href' => 'http://fonts.googleapis.com/css?family=Oswald', 'rel' => 'stylesheet', 'type' => 'text/css'}
-    %link{'href' => 'css/style.css', 'rel' => 'stylesheet'}
+    %link{'href' => './stylesheets/style.css', 'rel' => 'stylesheet'}
 
   %body
     #container
-      #top{:class => "top-#{@update.reaction}"}
+      #top{:class => "top-#{@update.reaction.downcase}"}
       #shadow
         #message
           #today Today the markets are
@@ -20,7 +20,7 @@
             %a{ :href => "#{@update.url}" }
               #{@update.reason}
         #graph
-          %img{ :src => "images/#{@update.reaction}.png", :alt => "The markets are #{@update.reaction}" }
+          %img{ :src => "./images/#{@update.reaction}.png", :alt => "The markets are #{@update.reaction}" }
         %footer<
           Updated on Monday 6th February 2012. Created by
           %a{ :href => "http://twitter.com/#!/macdermott"}
