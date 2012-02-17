@@ -9,4 +9,7 @@ describe "Update" do
         update.reason.should == VALID_TWEET.split[2..VALID_TWEET.split.length].join(" ")
     end
 
+    it "should throw an error for an invalid reaction" do
+        expect { update = Update.new INVALID_REACTION_TWEET }.to raise_error(ArgumentError, "Invalid Reaction")
+    end
 end

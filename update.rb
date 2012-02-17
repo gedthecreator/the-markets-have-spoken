@@ -12,7 +12,7 @@ class Update
 
     def validate
         if not @reactions.include?(@reaction.downcase)
-            raise ArgumentError, "Invalid reaction"
+            raise ArgumentError, "Invalid Reaction"
         end
     end
 end
