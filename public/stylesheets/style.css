@@ -1,0 +1,83 @@
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
+	color:#333333;
+}
+
+a {
+	color : #000000;
+	display:inline;
+}
+
+footer {
+	margin-top:10px;
+	margin-bottom:15px;
+	font-size:12px;
+	text-align:center;
+	color:#333333;
+}
+
+#container {
+	width: 800px;
+	margin-left:auto;
+	margin-right: auto;
+	height: 100%;
+	position:relative;
+}
+
+#top {
+	height:10px;
+}
+
+#top-sad{
+	background-color: #333399;
+}
+
+#top-happy{
+	background-color: #333399;
+}
+
+#top-calm{
+	background-color: #333399;
+}
+
+#top-angry{
+	background-color: #333399;
+}
+
+#top-tumultuous{
+	background-color: #333399;
+}
+
+#shadow {
+	background-image: url("images/shadow.png");
+	width:100%;
+}
+
+#message {
+	margin-top:10%;
+	margin-bottom:2%;
+	text-align:center;
+}
+
+#today {
+	margin-top:10px;
+	margin-bottom:10px; 
+	font-size:24px;
+}
+
+#reaction{
+	margin-top:25px;
+	margin-bottom:25px;
+	font-weight:bold;
+	font-size:48px;
+}
+
+#news{
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:16px;
+}
