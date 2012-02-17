@@ -1,6 +1,10 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    haml (3.1.4)
+    metaclass (0.0.1)
+    mocha (0.10.3)
+      metaclass (~> 0.0.1)
     rack (1.4.1)
     sinatra (1.1.0)
       rack (~> 1.1)
@@ -11,4 +15,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
+  mocha
   sinatra (= 1.1.0)

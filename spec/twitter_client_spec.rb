@@ -16,5 +16,6 @@ describe 'Twitter' do
     it "should" do
         puts "Hello"
         puts ENV['CONSUMER_KEY']
+        puts "Hello"
     end
 end

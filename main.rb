@@ -4,6 +4,6 @@ require 'haml'
 
 class Main < Sinatra::Base
   get '/' do
-    haml :main
+    "Hello"
   end
 end
