@@ -12,4 +12,8 @@ describe "Update" do
     it "should throw an error for an invalid reaction" do
         expect { update = Update.new INVALID_REACTION_TWEET }.to raise_error(ArgumentError, "Invalid Reaction")
     end
+
+    it "should throw an error for an invalid url" do
+        expect { update = Update.new INVALID_URL_TWEET }.to raise_error(ArgumentError, "Invalid URL")
+    end
 end

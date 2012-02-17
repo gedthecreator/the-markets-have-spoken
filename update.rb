@@ -14,5 +14,9 @@ class Update
         if not @reactions.include?(@reaction.downcase)
             raise ArgumentError, "Invalid Reaction"
         end
+
+        if @url.match(URL_REGEX).nil?
+            raise ArgumentError, "Invalid URL"
+        end
     end
 end
