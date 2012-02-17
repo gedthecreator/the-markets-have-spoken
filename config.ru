@@ -1,3 +1,3 @@
-require File.dirname(__FILE__) + '/main'
+require './main'
 
 run Main.new
