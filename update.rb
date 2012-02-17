@@ -1,4 +1,5 @@
 class Update
+  URL_REGEX = 'https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?'
   attr_accessor :reaction, :reason, :url
 
   def initialize(tweet)
