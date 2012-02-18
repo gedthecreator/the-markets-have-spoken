@@ -7,6 +7,8 @@ class TwitterClient
   end
 
   def latest
-    Update.new @twitter.direct_messages[0].text
+    direct_message = @twitter.direct_messages[0]
+    created_at = direct_message.created_at
+    Update.new direct_message.text , created_at
   end
 end

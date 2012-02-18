@@ -12,15 +12,11 @@ describe 'Twitter' do
       config.oauth_token = ENV['OAUTH_TOKEN']
       config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
     end
+    @spec_helper = SpecHelper.new
   end
 
   it "should return valid update for valid tweet" do
-    direct_message = Twitter::DirectMessage.new
-    direct_message.stubs(:text).returns(VALID_TWEET)
-    messages = [ direct_message ]
-
-    @twitter = Twitter::Base.new
-    @twitter.stubs(:direct_messages).returns(messages)
+    @twitter = @spec_helper.mock_direct_message(VALID_TWEET, CREATED_AT)
 
     twitter_client = TwitterClient.new @twitter
 
@@ -32,12 +28,7 @@ describe 'Twitter' do
   end
 
   it "should throw an error if the reaction is incorrect" do
-    direct_message = Twitter::DirectMessage.new
-    direct_message.stubs(:text).returns(INVALID_REACTION_TWEET)
-    messages = [ direct_message ]
-
-    @twitter = Twitter::Base.new
-    @twitter.stubs(:direct_messages).returns(messages)
+    @twitter = @spec_helper.mock_direct_message(INVALID_REACTION_TWEET, CREATED_AT)
 
     twitter_client = TwitterClient.new @twitter
 
@@ -45,12 +36,7 @@ describe 'Twitter' do
   end
   
   it "should throw an error if the url is incorrect" do
-    direct_message = Twitter::DirectMessage.new
-    direct_message.stubs(:text).returns(INVALID_URL_TWEET)
-    messages = [ direct_message ]
-
-    @twitter = Twitter::Base.new
-    @twitter.stubs(:direct_messages).returns(messages)
+    @twitter = @spec_helper.mock_direct_message(INVALID_URL_TWEET, CREATED_AT)
 
     twitter_client = TwitterClient.new @twitter
 
