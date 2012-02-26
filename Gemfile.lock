@@ -4,6 +4,7 @@ GEM
     activesupport (3.1.1)
       multi_json (~> 1.0)
     addressable (2.2.6)
+    dalli (1.1.4)
     faraday (0.7.6)
       addressable (~> 2.2)
       multipart-post (~> 1.1)
@@ -31,6 +32,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dalli
   haml
   i18n
   mocha

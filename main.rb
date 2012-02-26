@@ -2,6 +2,7 @@ require 'rubygems' if RUBY_VERSION < "1.9"
 require 'sinatra/base'
 require 'haml'
 require 'twitter'
+require 'dalli'
 require File.dirname(__FILE__) + '/update'
 require File.dirname(__FILE__) + '/twitter_client'
 
@@ -18,7 +19,21 @@ class Main < Sinatra::Base
   end
 
   get '/' do
-    @update = @twitter_client.latest
+    @update = get
     haml :main
+  end
+  
+  def get
+    dc = Dalli::Client.new(ENV['MEMCACHE_SERVERS'], :expires_in => 300)    
+    dc.set('abc', 123)
+    value = dc.get('abc')
+
+    if (dc.get(:latest) == nil)
+      latest = @twitter_client.latest
+      latest.reason += ' ***Cached***'
+      dc.set(:latest, latest)
+    end
+
+    return dc.get(:latest)
   end
 end
