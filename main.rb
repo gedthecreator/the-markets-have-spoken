@@ -29,9 +29,7 @@ class Main < Sinatra::Base
     value = dc.get('abc')
 
     if (dc.get(:latest) == nil)
-      latest = @twitter_client.latest
-      latest.reason += ' ***Cached***'
-      dc.set(:latest, latest)
+      dc.set(:latest, @twitter_client.latest)
     end
 
     return dc.get(:latest)
